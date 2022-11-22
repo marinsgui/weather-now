@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ccc;
+  background-color: #49C6E5;
 }
 
 body h1 {
@@ -19,9 +20,11 @@ body h1 {
 
 .container {
   width: 35vw;
-  height: 35vh;
+  max-height: 35vh;
   padding: 1em;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.705);
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px #000;
 }
 
 .container input {
@@ -46,14 +49,26 @@ body h1 {
   background-color: #ff9100d6;
 }
 
-.container .results .temps {
-  width: 100px;
+.container .results h2 {
+  text-align: center;
+}
+
+.container .results .infos {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  padding: 0.5em;
+  margin-top: 2em;
+  font-size: 1.5em;
 }
 
 .container .results .temps p {
-  font-size: 1.5em;
+  text-align: center;
+}
+
+.container .description {
+  text-align: center;
+}
+
+.container .description p {
+  text-transform: capitalize;
 }

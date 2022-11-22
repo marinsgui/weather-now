@@ -12,9 +12,7 @@ function App() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(city)}&appid=d5bbec1f9469a4d00df8f6ac6e8adce1&lang=pt_br&units=metric`)
     .then(resp => resp.json())
-    .then(data => {
-      setWeather(data)
-  })
+    .then(data => setWeather(data))
     .catch(err => console.log(err))
 
     setCity('')
@@ -37,12 +35,17 @@ function App() {
         {Object.keys(weather).length !== 0 && (
           <div className='results'>
             <h2>{weather.name}</h2>
-            <div className='temps'>
-              <p>{weather.main.temp}</p>
-              <p><small>min.</small>{weather.main.temp_min}</p>
-              <p><small>max.</small>{weather.main.temp_max}</p>
+            <div className='infos'>
+              <div className='temps'>
+                <p>{weather.main.temp}°C</p>
+                <p><small>min.</small> {weather.main.temp_min}°C</p>
+                <p><small>max.</small> {weather.main.temp_max}°C</p>
+              </div>
+              <div className='description'>
+                <p>{weather.weather[0].description}</p>
+                <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="Weather icon" />
+              </div>
             </div>
-            <p>{weather.weather[0].description}</p>
           </div>
         )}
       </div>
