@@ -10,7 +10,7 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault()
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(city)}&appid=d5bbec1f9469a4d00df8f6ac6e8adce1&lang=pt_br&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(city)}&lang=pt_br&units=metric&appid=d5bbec1f9469a4d00df8f6ac6e8adce1`)
     .then(resp => resp.json())
     .then(data => setWeather(data))
     .catch(err => console.log(err))
@@ -26,7 +26,7 @@ function App() {
         <form>
           <input
           type="text"
-          placeholder='Digite aqui o nome da cidade e o país'
+          placeholder='Digite aqui o nome da cidade'
           onChange={(e) => setCity(e.target.value)}
           value={city}
           />
